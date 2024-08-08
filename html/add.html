@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить книгу</title>
+</head>
+<body>
+<form action="/add" method="post">
+    Название: <input type="text" name="title" required><br>
+    Автор: <input type="text" name="author" required><br>
+    Год выпуска: <input type="number" name="year" required min="-5000" max="2030" step="1"><br>
+    <button type="submit">Добавить</button>
+</form>
+</body>
+</html>

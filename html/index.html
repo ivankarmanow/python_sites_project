@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+{% if user %}
+	Вы вошли как {{ user.login }}
+{% else %}
+    Вы не вошли <br>
+    <a href="/login_form">Войти</a><br>
+    <a href="/reg_form">Зарегистрироваться</a><br>
+{% endif %}
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Название</th>
+        <th>Автор</th>
+        <th>Год издания</th>
+        <th>Ссылка</th>
+    </tr>
+    {% for book in books %}
+    	<tr>
+            <td>{{ book.id }}</td>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.year }}</td>
+            <td><a href="/book/{{ book.id }}">Страница книги</a></td>
+        </tr>
+    {% endfor %}
+</table><br>
+<a href="/add_form">Добавить книгу</a>
+</body>
+</html>

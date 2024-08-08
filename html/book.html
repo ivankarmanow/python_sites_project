@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ book.title }}</title>
+</head>
+<body>
+<h1>{{ book.title }}</h1>
+Написал {{ book.author }} в {{ book.year }} году <br>
+<b>ID:</b> {{ book.id }}<br>
+<b>Добавил на сайт: </b> {{ added_by.login }}<br>
+{% if is_admin %}
+    <a href="/delete?id={{ book.id }}">Удалить книгу</a>
+{% endif %}
+</body>
+</html>
